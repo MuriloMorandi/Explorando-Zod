@@ -1,0 +1,15 @@
+{
+  "name": "Explorando-Zod",
+  "version": "1.0.0",
+  "description": "Repositório para testar e explorar os recursos da biblioteca Zod para validação de dados em TypeScript",
+  "scripts": {},
+  "keywords": ["zod", "typescript", "validation"],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.3"
+  }
+}
