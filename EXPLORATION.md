@@ -6,6 +6,9 @@
 3. [Validação de Objetos](#3-validação-de-objetos)
 4. [Validação de Array](#4-validação-de-array)
 5. [Validação de array de objetos](#5-validação-de-array-de-objetos)
+6. [Validação de enums](#6-validação-de-enums)
+7. [Validação encadeada](#7-validação-encadeada)
+8. [Validação de Estruturas Diferentes com base em uma chave](#8-validação-de-estruturas-diferentes-com-base-em-uma-chave)
 
 ---
 
@@ -67,3 +70,60 @@ Propriedades do objeto:
 
 [Schema](src/005.ts)  
 [Test](src/__test__/005.test.ts)
+
+---
+
+## 6. Validação de enums **Em progresso** 
+Defina um enum de funções (`Admin`, `User`, `Guest`).  
+Crie um esquema para validar um objeto com:
+- `username` (string)
+- `role` (valores válidos do enum)
+
+Teste com dados válidos e inválidos.
+
+[Schema](src/006.ts)  
+[Test](src/__test__/006.test.ts)
+
+---
+
+## 7. Validação encadeada 🚧 **Em progresso**  
+Crie um schema com validação condicional.
+
+>**Observação:** Realizar fazendo uso a `.refine()` para validações condicionais
+
+- `nome` (string com pelo menos 5 caracteres)
+- `email` (string, email válido)
+- `linguagemDeProgramacaoPrincipal` (string com pelo menos 2 caracteres)
+- `nivel` (enum, [`junior`, `pleno` , `senior`])
+- `experienciaEmAnos` (número, mínimo 1 e máximo 30)
+- `tecnologias` (array de string com pelo menos um item ) 
+
+- Se for `senior`, precisa ter:
+    - Tempo de experiência (mínimo 5 anos)
+    - Pelo menos 2 tecnologias avançadas
+
+- Se for `pleno`, precisa ter:
+    - Tempo de experiência (mínimo 2 anos)
+    - Pelo menos 1 tecnologias avançadas
+
+[Schema](src/007.ts)  
+[Test](src/__test__/007.test.ts)
+
+## 8.Validação de Estruturas Diferentes com base em uma chave **Em progresso** 
+Crie um schema para validação de objeto com base em uma chave `tipo`
+
+>**Observação:** Realizar fazendo uso a `.discriminatedUnion()` para validar confomer o tipo
+
+Requisitos do objeto de email
+- `tipo` "email"
+- `email` (string, email válido)
+- `assunto` (string, mínimo 1 e maximo 25 caracteres)
+- `mensagem` (string, mínimo 1 e maximo 125 caracteres)
+
+Requisitos do objeto de sms
+- `tipo` "sms"
+- `numeroTelefone` (string, somente números, maximo 25)
+- `mensagem` (string, mínimo 1 e maximo 125 caracteres)
+
+[Schema](src/008.ts)  
+[Test](src/__test__/008.test.ts)
