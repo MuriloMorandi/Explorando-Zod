@@ -32,7 +32,7 @@ jobs:
         run: pnpm jest
         
   update-doc:
-    needs: test  # Só executa se os testes passarem
+    needs: teste  # Só executa se os testes passarem
     runs-on: ubuntu-latest
 
     steps:
