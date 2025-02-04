@@ -95,7 +95,7 @@ Crie um schema com validação condicional.
 - `email` (string, email válido)
 - `linguagemDeProgramacaoPrincipal` (string com pelo menos 2 caracteres)
 - `nivel` (enum, [`junior`, `pleno` , `senior`])
-- `experienciaEmAnos` (número, mínimo 1 e máximo 30)
+- `experienciaEmAnos` (número, mínimo 0 e máximo 30)
 - `tecnologias` (array de string com pelo menos um item ) 
 
 - Se for `senior`, precisa ter:
