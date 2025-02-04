@@ -12,7 +12,7 @@
 
 ---
 
-## 1. Validação de String 🚧 **Em progresso**  
+## Validação de String ✅ **Concluído** **Em progresso**  
 Crie um esquema que valide uma string:
 
 - Deve ser uma string
