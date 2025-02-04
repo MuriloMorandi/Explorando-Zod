@@ -1,5 +1,4 @@
 import { describe, expect, it, test } from "@jest/globals";
-import { z } from "zod";
 import { schema } from "../001";
 
 describe("Validação de String", () => {
