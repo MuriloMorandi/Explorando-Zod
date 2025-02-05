@@ -1,7 +1,7 @@
 name: Atualizar Documentação
 
 on: 
-    pull_request:
+    push:
         branches:
             - master
         
