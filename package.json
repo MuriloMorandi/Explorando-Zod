@@ -5,7 +5,7 @@
   "scripts": {
     "test": "jest",
     "update-md": "node --experimental-modules update-doc.js",
-    "posttest": "npm run update-md"
+    "posttest": "pnpm update-md"
   },
   "keywords": [
     "zod",

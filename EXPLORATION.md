@@ -5,14 +5,14 @@
 2. [Validação de Números](#2-validação-de-números)
 3. [Validação de Objetos](#3-validação-de-objetos)
 4. [Validação de Array](#4-validação-de-array)
-5. [Validação de array de objetos](#5-validação-de-array-de-objetos)
-6. [Validação de enums](#6-validação-de-enums)
-7. [Validação encadeada](#7-validação-encadeada)
+5. [Validação de Array de Objetos](#5-validação-de-array-de-objetos)
+6. [Validação de Enums](#6-validação-de-enums)
+7. [Validação Encadeada](#7-validação-encadeada)
 8. [Validação de Estruturas Diferentes com base em uma chave](#8-validação-de-estruturas-diferentes-com-base-em-uma-chave)
 
 ---
 
-## Validação de String ✅ **Concluído** **Em progresso**  
+## 1. Validação de String ✅
 Crie um esquema que valide uma string:
 
 - Deve ser uma string
@@ -24,7 +24,7 @@ Crie um esquema que valide uma string:
 
 ---
 
-## 2. Validação de Números 🚧 **Em progresso**  
+## Validação de Números ✅
 Crie um esquema que valide um número:
 
 - Deve ser uma número
@@ -35,7 +35,7 @@ Crie um esquema que valide um número:
 
 ---
 
-## 3. Validação de objeto 🚧 **Em progresso**  
+## 3. Validação de objeto 🚧
 Crie um esquema que valide um objeto:
 
 Propriedades do Objeto:
@@ -49,7 +49,7 @@ Propriedades do Objeto:
 
 ---
 
-## 4. Validação de array 🚧 **Em progresso**  
+## 4. Validação de array 🚧
 Crie um esquema que valide um array de strings contendo no mínimo 3 itens e no máximo 5.
 
 [Schema](src/004.ts)  
@@ -59,7 +59,7 @@ Crie um esquema que valide um array de strings contendo no mínimo 3 itens e no 
 
 ---
 
-## 5. Validação de array de objetos 🚧 **Em progresso**  
+## 5. Validação de array de objetos 🚧
 Crie um esquema para validar um array de objetos. 
 
 Propriedades do objeto:
@@ -73,7 +73,7 @@ Propriedades do objeto:
 
 ---
 
-## 6. Validação de enums **Em progresso** 
+## 6. Validação de enums 🚧
 Defina um enum de funções (`Admin`, `User`, `Guest`).  
 Crie um esquema para validar um objeto com:
 - `username` (string)
@@ -86,7 +86,7 @@ Teste com dados válidos e inválidos.
 
 ---
 
-## 7. Validação encadeada 🚧 **Em progresso**  
+## 7. Validação encadeada 🚧
 Crie um schema com validação condicional.
 
 >**Observação:** Realizar fazendo uso a `.refine()` para validações condicionais
@@ -109,7 +109,7 @@ Crie um schema com validação condicional.
 [Schema](src/007.ts)  
 [Test](src/__test__/007.test.ts)
 
-## 8.Validação de Estruturas Diferentes com base em uma chave **Em progresso** 
+## 8.Validação de Estruturas Diferentes com base em uma chave 🚧
 Crie um schema para validação de objeto com base em uma chave `tipo`
 
 >**Observação:** Realizar fazendo uso a `.discriminatedUnion()` para validar confomer o tipo

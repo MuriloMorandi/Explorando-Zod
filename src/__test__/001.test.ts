@@ -1,7 +1,7 @@
 import { describe, expect, it, test } from "@jest/globals";
 import { schema } from "../001";
 
-describe("Validação de String", () => {
+describe("Validação de Strings", () => {
   test.each([
     ["Nome Teste", "Nome Teste"],
     ["  Nome Teste  ", "Nome Teste"],
