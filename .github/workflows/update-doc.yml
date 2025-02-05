@@ -1,0 +1,74 @@
+name: Atualizar Documentação
+
+on: 
+    pull_request:
+        branches:
+            - master
+        
+jobs:
+  teste:
+    runs-on: ubuntu-latest
+    
+    steps:
+      # Checkout the repository
+      - name: Checkout Code
+        uses: actions/checkout@v4
+      
+      # Set up Node.js with specific version
+      - name: Configurar Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20.13.1'
+      
+      # Install a specific version of pnpm
+      - name: Instalação do PNPM@9.6.0
+        uses: pnpm/action-setup@v4.0.0
+        with:
+          version: '9.6.0'
+        
+      # Install dependencies
+      - name: Instalar dependências
+        run: pnpm install
+
+      # Run tests
+      - name: Executar testes
+        run: pnpm jest
+        
+  update-doc:
+    needs: teste  # Só executa se os testes passarem
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout do código
+        uses: actions/checkout@v4
+
+        # Set up Node.js with specific version
+      - name: Configurar Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20.13.1'
+      
+      # Install a specific version of pnpm
+      - name: Instalação do PNPM@9.6.0
+        uses: pnpm/action-setup@v4.0.0
+        with:
+          version: '9.6.0'
+        
+      # Install dependencies
+      - name: Instalar dependências
+        run: pnpm install
+
+      - name: Executar testes
+        run: pnpm test
+
+      - name: Atualizar documentação
+        run: node update-doc.js
+
+      - name: Commit e Push das mudanças
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add EXPLORATION.md
+          git commit -m ":memo: Atualizando documentação automática" || echo "Nenhuma alteração para commit"
+          git push
+      
