@@ -77,7 +77,7 @@ jobs:
       
       - name: Push das mudanças
         run: |
-          git push
+            git push --set-upstream origin doc
       
       - name: Auto-merge PR
         uses: pascalgn/automerge-action@v0.15.6
