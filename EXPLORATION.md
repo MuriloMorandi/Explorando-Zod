@@ -24,7 +24,7 @@ Crie um esquema que valide uma string:
 
 ---
 
-## Validação de Números ✅
+## 2. Validação de Números ✅
 Crie um esquema que valide um número:
 
 - Deve ser uma número
