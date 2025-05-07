@@ -2,7 +2,7 @@ import { z } from "zod";
 
 const schema = z.object({
     nome: z.string().trim().min(5),
-    email: z.string().email(),
+    email: z.email('O email informado não é válido'),
     linguagemDeProgramacaoPrincipal: z.string().trim().min(2),
     nivel: z.enum(["junior", "pleno", "senior"]),
     experienciaEmAnos: z.number().int().min(0).max(30),

@@ -9,8 +9,7 @@ const schema = z.object({
     idade: z.number({ message: "O campo idade deve ser um número" })
         .min(0, 'O campo idade não pode ser menor que 0')
         .max(150, 'O campo idade não pode ser maior que 150'),
-    email: z.string()
-        .email('O email informado não é válido'),
+    email: z.email('O email informado não é válido'),
     apelido: z.string({ message: "O apelido deve ser uma string" })
         .trim()
         .min(2, 'O apelido tem que conter ao menos 2 caracters')
