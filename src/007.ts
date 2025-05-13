@@ -6,7 +6,7 @@ const schema = z.object({
     linguagemDeProgramacaoPrincipal: z.string().trim().min(2),
     nivel: z.enum(["junior", "pleno", "senior"]),
     experienciaEmAnos: z.number().int().min(0).max(30),
-    tecnologias: z.array(z.string().trim().min(2)).min(1)
+    tecnologias: z.array(z.string().trim().min(2)).nonempty()
 }).refine(
     data => 
         data.nivel !== "senior" || (data.experienciaEmAnos >= 5 && data.tecnologias.length >= 2),
