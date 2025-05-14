@@ -4,6 +4,7 @@
   "description": "Repositório para testar e explorar os recursos da biblioteca Zod para validação de dados em TypeScript",
   "scripts": {
     "test": "jest",
+    "test:watch": "jest  --watch",
     "update-md": "node --experimental-modules update-doc.js"
   },
   "keywords": [
