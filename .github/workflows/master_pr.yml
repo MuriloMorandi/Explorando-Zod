@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     
     outputs:
-      format-failed: ${{ steps.format-check.outcome == 'failure' }}
+      format-failed: ${{ steps.format-check.conclusion == 'failure' }}
 
     steps:
       - uses: actions/checkout@v4
