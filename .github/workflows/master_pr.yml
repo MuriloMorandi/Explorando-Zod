@@ -21,12 +21,14 @@ jobs:
             
       # Run Check
       - name: Executar Check
+        id: format-check
         run: pnpm check
         continue-on-error: true
 
       - name: Erro de formatação é ou lint
         if: steps.format-check.outcome == 'failure'
         run: exit 1
+
 
   teste:
     runs-on: ubuntu-latest
