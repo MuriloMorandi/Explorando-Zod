@@ -1,5 +1,5 @@
 name: Setup Node and Install Deps
-description: Reusable Node setup
+description: Reusable Node setup amd install dependencies
 runs:
   using: "composite"
   steps:
