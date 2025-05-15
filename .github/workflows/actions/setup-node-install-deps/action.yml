@@ -18,4 +18,6 @@ runs:
       # Install dependencies
       - name: Instalar dependências
         run: pnpm install
+        shell: bash
+
 
