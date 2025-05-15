@@ -33,7 +33,7 @@ jobs:
   format:
     runs-on: ubuntu-latest
     needs: check
-    if: needs.check.result == 'failure'   # roda só se o job check falhar
+    if: needs.check.conclusion == 'failure'
     
     steps:
       - name: Mostrar mensagem no log
