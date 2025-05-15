@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     
     outputs:
-      format-failed: ${{ steps.format-check.conclusion == 'failure' }}
+      format-failed: ${{ steps.format-check.conclusion == 'success' }}
 
     steps:
       - uses: actions/checkout@v4
@@ -22,13 +22,13 @@ jobs:
         continue-on-error: true
 
       - name: Erro de formatação é ou lint
-        if: steps.format-check.conclusion == 'failure'
+        if: steps.format-check.outcome  == 'failure'
         run: exit 1
     
   approval:
     runs-on: ubuntu-latest
     needs: check
-    if: needs.check.conclusion == 'failure'
+    if: needs.check.conclusion == 'success'
     environment: approval  # pausa até aprovação
     steps:
       - run: echo "Aguardando aprovação para continuar..."
