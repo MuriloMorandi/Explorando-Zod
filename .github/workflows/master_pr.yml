@@ -12,23 +12,21 @@ jobs:
       format-failed: ${{ steps.format-check.outcome == 'failure' }}
 
     steps:
-      # Checkout the repository
-      - name: Checkout Code
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
       
-      - name: Setup Node and Install Deps
-        uses: './.github/workflows/actions/setup-node-install-deps' 
-            
-      # Run Check
+      - uses: './.github/workflows/actions/setup-node-install-deps' 
+          
       - name: Executar Check
         id: format-check
         run: pnpm check
         continue-on-error: true
 
       - name: Erro de formatação é ou lint
-        if: steps.format-check.outcome == 'failure'
+        if: steps.format-check.conclusion == 'failure'
         run: exit 1
 
+      - name: Debug status do job check
+        run: echo "Status do job check: ${{ job.status }}"
 
   format:
     runs-on: ubuntu-latest
@@ -54,5 +52,4 @@ jobs:
       # Run tests
       - name: Executar testes
         run: pnpm jest
-      
       
