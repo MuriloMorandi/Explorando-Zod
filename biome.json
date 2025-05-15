@@ -1,5 +1,5 @@
 {
-    "vcs": {
+	"vcs": {
 		"enabled": false,
 		"clientKind": "git",
 		"useIgnoreFile": false
@@ -19,9 +19,9 @@
 		"enabled": true,
 		"rules": {
 			"recommended": true,
-			"correctness":{
-				"noUnusedImports":"error",
-				"noUnusedVariables":"error"
+			"correctness": {
+				"noUnusedImports": "error",
+				"noUnusedVariables": "error"
 			}
 		}
 	},
