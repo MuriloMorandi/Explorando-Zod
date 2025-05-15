@@ -30,6 +30,15 @@ jobs:
         run: exit 1
 
 
+  format:
+    runs-on: ubuntu-latest
+    needs: check
+    if: needs.check.result == 'failure'   # roda só se o job check falhar
+    
+    steps:
+      - name: Mostrar mensagem no log
+        run: echo "Olá, isso aparece no console do GitHub Actions"
+        
   teste:
     runs-on: ubuntu-latest
     needs: check
@@ -45,15 +54,5 @@ jobs:
       # Run tests
       - name: Executar testes
         run: pnpm jest
-
-  format:
-    runs-on: ubuntu-latest
-    needs: check
-    
-    if: needs.check.result == 'failure'   # roda só se o check falhar
-    
-    steps:
-      - name: Mostrar mensagem no log
-        run: echo "Olá, isso aparece no console do GitHub Actions"
       
       
