@@ -1,26 +1,26 @@
 {
-  "name": "Explorando-Zod",
-  "version": "1.0.0",
-  "description": "Repositório para testar e explorar os recursos da biblioteca Zod para validação de dados em TypeScript",
-  "scripts": {
-    "test": "jest",
-    "update-md": "node --experimental-modules update-doc.js"
-  },
-  "keywords": [
-    "zod",
-    "typescript",
-    "validation"
-  ],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "zod": "^3.24.1"
-  },
-  "devDependencies": {
-    "@jest/globals": "^29.7.0",
-    "jest": "^29.7.0",
-    "ts-jest": "^29.3.2",
-    "ts-node": "^10.9.2",
-    "typescript": "^5.7.3"
-  }
+	"name": "Explorando-Zod",
+	"version": "1.0.0",
+	"description": "Repositório para testar e explorar os recursos da biblioteca Zod para validação de dados em TypeScript",
+	"scripts": {
+		"test": "jest",
+		"posttest": "biome format . --write",
+		"format": "biome format .",
+		"lint": "biome lint .",
+		"check": "biome check .",
+		"update-md": "node --experimental-modules update-doc.js"
+	},
+	"keywords": ["zod", "typescript", "validation"],
+	"license": "ISC",
+	"dependencies": {
+		"zod": "^3.24.1"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "^1.9.4",
+		"@jest/globals": "^29.7.0",
+		"jest": "^29.7.0",
+		"ts-jest": "^29.3.2",
+		"ts-node": "^10.9.2",
+		"typescript": "^5.7.3"
+	}
 }
