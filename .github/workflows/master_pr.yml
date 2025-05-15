@@ -24,10 +24,6 @@ jobs:
       - name: Erro de formatação é ou lint
         if: steps.format-check.conclusion == 'failure'
         run: exit 1
-
-      - name: Debug status do job check
-        run: echo "Status do job check: ${{ job.status }}"
-
   format:
     runs-on: ubuntu-latest
     needs: check
