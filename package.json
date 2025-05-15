@@ -6,6 +6,7 @@
 		"test": "jest",
 		"posttest": "biome format . --write",
 		"format": "biome format .",
+		"format:write": "biome format . --write",
 		"lint": "biome lint .",
 		"check": "biome check .",
 		"update-md": "node --experimental-modules update-doc.js"
