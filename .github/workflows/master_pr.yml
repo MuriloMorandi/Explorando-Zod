@@ -42,6 +42,11 @@ jobs:
 
       - uses:  './.github/workflows/actions/config-commit'
         
+      - name: Atualizar branch antes de commitar
+        run: |
+          git fetch origin
+          git rebase origin/${{ github.head_ref }}
+        
       - name: Fazer commit das alterações
         run: |
           git add .
