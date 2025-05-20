@@ -30,7 +30,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: check
     if: failure()
-    
+
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
@@ -38,7 +38,7 @@ jobs:
       - uses: './.github/workflows/actions/setup-node-install-deps'
       
       - name: Corrigir Formatação
-        run: pnpm biome:format
+        run: pnpm format:write
         
   teste:
     runs-on: ubuntu-latest
