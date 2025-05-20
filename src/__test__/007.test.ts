@@ -1,7 +1,7 @@
-import { describe, expect, test } from "@jest/globals";
+import { describe, expect, test } from '@jest/globals';
 
-describe("Validação de Estruturas Diferentes com base em uma chave", () => {
-  test("WIP", () => {
-    expect(1 + 1).toBe(2); // Isso sempre será falso
-  });
+describe('Validação de Estruturas Diferentes com base em uma chave', () => {
+	test('WIP', () => {
+		expect(1 + 1).toBe(2); // Isso sempre será falso
+	});
 });
