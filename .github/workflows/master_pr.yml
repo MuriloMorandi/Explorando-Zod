@@ -43,7 +43,7 @@ jobs:
         run: |
           git fetch origin
           git rebase origin/${{ github.head_ref }}
-          
+
       - name: Corrigir Formatação
         run: pnpm format:write
         
@@ -54,10 +54,24 @@ jobs:
           git push origin HEAD:${{ github.head_ref }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    
+  recheck:
+    runs-on: ubuntu-latest
+    name: recheck
+    needs: format
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: './.github/workflows/actions/setup-node-install-deps'
+
+      - name: Executar Check
+        run: pnpm check
       
   teste:
     runs-on: ubuntu-latest
     needs: [check, format]
+    if: |
+      needs.check.result == 'success' || needs.recheck.result == 'success'
 
     steps:
       # Checkout the repository
