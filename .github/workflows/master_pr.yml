@@ -30,9 +30,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: check
     if: failure()
-    environment: 
-      name: approval  # pausa até aprovação
-      url: https://github.com/MuriloMorandi/Explorando-Zod
+    
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
