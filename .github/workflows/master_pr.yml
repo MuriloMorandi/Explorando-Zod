@@ -36,9 +36,6 @@ jobs:
         uses: actions/checkout@v4
       
       - uses: './.github/workflows/actions/setup-node-install-deps'
-      
-      - name: Corrigir Formatação
-        run: pnpm format:write
 
       - uses:  './.github/workflows/actions/config-commit'
         
@@ -46,6 +43,9 @@ jobs:
         run: |
           git fetch origin
           git rebase origin/${{ github.head_ref }}
+          
+      - name: Corrigir Formatação
+        run: pnpm format:write
         
       - name: Fazer commit das alterações
         run: |
