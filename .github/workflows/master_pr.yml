@@ -39,7 +39,17 @@ jobs:
       
       - name: Corrigir Formatação
         run: pnpm format:write
+
+      - uses:  './.github/workflows/actions/config-commit'
         
+      - name: Fazer commit das alterações
+        run: |
+          git add .
+          git commit -m "fix: aplicar formatação automática via CI" || echo "Nada para commitar"
+          git push origin HEAD:${{ github.head_ref }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      
   teste:
     runs-on: ubuntu-latest
     needs: [check, format]
