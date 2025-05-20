@@ -12,11 +12,9 @@ const schema = z.array(
 		quantidade: z
 			.number()
 			.min(0, { message: 'A quantidade tem que ser maior ou igual há 0' }),
-		categoria: z
-			.array(z.string().trim().min(1, 'Categoria Invalida'))
-			.min(1, {
-				message: 'O array de categorias tem que conter ao menos 1 item',
-			}),
+		categoria: z.array(z.string().trim().min(1, 'Categoria Invalida')).min(1, {
+			message: 'O array de categorias tem que conter ao menos 1 item',
+		}),
 	}),
 );
 
